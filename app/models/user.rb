@@ -8,4 +8,18 @@ class User < ApplicationRecord
     has_one:car
     has_many:watches
     has_one:job
+<<<<<<< Updated upstream
+=======
+
+    scope :by_car_name, ->(name){joins(:cars).where(cars: {car_name: name})}
+    
+    before_validation :generate_id, on: :create 
+
+    private
+    def generate_id
+       self.identifier="iraq-#{Date.today.year}-#{SecureRandom.hex(5)}"
+        end
+
+    
+>>>>>>> Stashed changes
 end
