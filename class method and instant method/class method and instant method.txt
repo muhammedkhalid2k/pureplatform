@@ -1,0 +1,9 @@
+class method:
+works for the whole class all objects or all users in the class , class methods are called on the class itself ..
+class method always state def (self. class_method_name)
+Class methods don't need a class instance
+ 
+instance methods:
+are called on a particular instance of the class that we chosse like an object or user ..
+and instance method declaration (def instance_method_name)
+instance methods need a class instance and can access the instance through self
