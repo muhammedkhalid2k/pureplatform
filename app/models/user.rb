@@ -10,7 +10,7 @@ class User < ApplicationRecord
     has_one:job
 
 
-    scope :by_car_name, ->(name){joins(:cars).where(cars: {car_name: name})}
+
 
 
     before_validation :generate_id, on: :create 
