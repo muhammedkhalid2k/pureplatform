@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_11_02_192704) do
   create_table "cars", force: :cascade do |t|
-    t.string "user_id"
+    t.integer "user_id"
     t.string "car_name"
     t.string "car_color"
     t.datetime "created_at", null: false
@@ -20,7 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_192704) do
   end
 
   create_table "jobs", force: :cascade do |t|
-    t.string "user_id"
+    t.integer "user_id"
     t.string "job"
     t.string "job_salary"
     t.datetime "created_at", null: false
@@ -28,7 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_192704) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "user_id"
+    t.integer "user_id"
     t.string "address"
     t.string "phone"
     t.datetime "created_at", null: false
@@ -39,12 +39,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_02_192704) do
     t.string "name"
     t.string "username"
     t.string "email"
+    t.string "identifier", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "watches", force: :cascade do |t|
-    t.string "user_id"
+    t.integer "user_id"
     t.string "watch_name"
     t.string "watch_color"
     t.datetime "created_at", null: false
