@@ -8,15 +8,11 @@ class User < ApplicationRecord
     has_one:car
     has_many:watches
     has_one:job
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
+
 
     scope :by_car_name, ->(name){joins(:cars).where(cars: {car_name: name})}
-=======
 
->>>>>>> 5f3a025e3153a613539604fc7404bbaaf5629553
-    
+
     before_validation :generate_id, on: :create 
 
     private
@@ -25,8 +21,4 @@ class User < ApplicationRecord
         end
 
     
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> 5f3a025e3153a613539604fc7404bbaaf5629553
 end
