@@ -1,8 +1,12 @@
 class User < ApplicationRecord
-    validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
-    validates_length_of :username, :minimum => 3 , allow_black:false 
-    validates :name, presence: true
-    validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+          :rememberable, :validatable
+   # validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
+   # validates_length_of :username, :minimum => 3 , allow_black:false 
+   # validates :name, presence: true
+   # validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
     validates :identifier, presence: true
     has_one:profile
     has_one:car
