@@ -1,0 +1,2 @@
+module HiphopsHelper
+end

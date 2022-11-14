@@ -10,11 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_10_135228) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_14_172314) do
+  create_table "apps", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.string "version"
+    t.string "author"
+    t.string "semantic_version"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "author", null: false
+    t.string "publisher", null: false
+    t.string "genre", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author"], name: "index_books_on_author"
+    t.index ["genre"], name: "index_books_on_genre"
+    t.index ["publisher"], name: "index_books_on_publisher"
+    t.index ["title"], name: "index_books_on_title"
+  end
+
   create_table "cars", force: :cascade do |t|
     t.integer "user_id"
     t.string "car_name"
     t.string "car_color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.string "genre"
+    t.string "platform"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hiphops", force: :cascade do |t|
+    t.string "artist"
+    t.string "groups"
+    t.string "subgenres"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -25,6 +65,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_10_135228) do
     t.string "job_salary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "musics", force: :cascade do |t|
+    t.string "chord"
+    t.string "band"
+    t.string "album"
+    t.string "genre"
+    t.string "mambo_no_5"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "hiphop"
   end
 
   create_table "profiles", force: :cascade do |t|

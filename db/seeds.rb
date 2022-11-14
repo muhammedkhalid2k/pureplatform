@@ -1,7 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+10.times do 
+    Music.create(chord: Faker::Music.chord, band: Faker::Music.band, album: Faker::Music.album, genre: Faker::Music.genre, mambo_no_5: Faker::Music.mambo_no_5)
+end
+
+10.times do
+    Hiphop.create(artist: Faker::Music::Hiphop.artist, groups: Faker::Music::Hiphop.groups, subgenres: Faker::Music::Hiphop.subgenres)
+end
