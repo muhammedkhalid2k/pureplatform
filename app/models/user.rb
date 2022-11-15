@@ -12,6 +12,7 @@ class User < ApplicationRecord
     has_one:car
     has_many:watches
     has_one:job
+    has_many:hiphops
 
 
 
